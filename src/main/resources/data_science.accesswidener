@@ -1,0 +1,3 @@
+accessWidener v2 named
+accessible field net/minecraft/block/entity/BeaconBlockEntity level I
+accessible field net/minecraft/client/network/ClientPlayerEntity client Lnet/minecraft/client/MinecraftClient;

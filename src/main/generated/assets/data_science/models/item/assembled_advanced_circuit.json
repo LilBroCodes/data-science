@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "data_science:item/assembled_advanced_circuit"
+  }
+}

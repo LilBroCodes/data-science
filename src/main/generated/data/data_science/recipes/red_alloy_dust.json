@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:redstone"
+    },
+    {
+      "item": "data_science:iron_dust"
+    },
+    {
+      "item": "data_science:copper_dust"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "data_science:red_alloy_dust"
+  }
+}

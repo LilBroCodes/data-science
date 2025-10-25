@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 600,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "data_science:assembled_advanced_circuit"
+  },
+  "result": "data_science:advanced_circuit"
+}

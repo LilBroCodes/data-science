@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pearl": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:ender_pearl"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "data_science:polished_prismarine_crystal"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:prismarine_pearl"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_pearl",
+      "has_shard",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:prismarine_pearl"
+    ]
+  },
+  "sends_telemetry_event": false
+}

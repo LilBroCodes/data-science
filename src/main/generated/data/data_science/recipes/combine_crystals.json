@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "data_science:shattered_prismarine_crystal"
+    },
+    {
+      "item": "data_science:shattered_prismarine_crystal"
+    },
+    {
+      "item": "data_science:shattered_prismarine_crystal"
+    }
+  ],
+  "result": {
+    "item": "minecraft:prismarine_crystals"
+  }
+}

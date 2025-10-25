@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "data_science",
+  "version": "${version}",
+  "name": "Data Science",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/data_science/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.lilbrocodes.data_science.data.DataScienceDataGenerator"
+    ],
+    "main": [
+      "org.lilbrocodes.data_science.common.DataScience"
+    ],
+    "client": [
+      "org.lilbrocodes.data_science.client.DataScienceClient"
+    ],
+    "jei_mod_plugin": [
+      "org.lilbrocodes.data_science.integration.jei.DataScienceJEIPlugin"
+    ]
+  },
+  "mixins": [
+    "data_science.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}",
+    "computercraft": ">=${cct_version}",
+    "composer_reloaded": ">=${composer_version}"
+  },
+  "recommends": {
+    "create": "*"
+  },
+  "accessWidener": "data_science.accesswidener"
+}

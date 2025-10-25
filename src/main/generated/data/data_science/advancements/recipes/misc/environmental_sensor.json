@@ -1,0 +1,61 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_alloy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "data_science:red_alloy_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_circuit": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "data_science:advanced_circuit"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_pearl": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "data_science:prismarine_pearl"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "data_science:environmental_sensor"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_circuit",
+      "has_pearl",
+      "has_alloy",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "data_science:environmental_sensor"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "data_science:block/environmental_sensor_top",
+    "side": "data_science:block/environmental_sensor_side"
+  }
+}

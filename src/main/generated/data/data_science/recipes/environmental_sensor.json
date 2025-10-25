@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "data_science:advanced_circuit"
+    },
+    "G": {
+      "item": "minecraft:iron_ingot"
+    },
+    "I": {
+      "item": "minecraft:iron_block"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "P": {
+      "item": "data_science:prismarine_pearl"
+    },
+    "R": {
+      "item": "data_science:red_alloy_ingot"
+    }
+  },
+  "pattern": [
+    "NPN",
+    "RCR",
+    "IGI"
+  ],
+  "result": {
+    "item": "data_science:environmental_sensor"
+  },
+  "show_notification": true
+}

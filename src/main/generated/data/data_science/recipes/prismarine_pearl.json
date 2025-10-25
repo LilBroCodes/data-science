@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "minecraft:ender_pearl"
+    },
+    "S": {
+      "item": "data_science:polished_prismarine_crystal"
+    }
+  },
+  "pattern": [
+    " S ",
+    "SPS",
+    " S "
+  ],
+  "result": {
+    "item": "data_science:prismarine_pearl"
+  },
+  "show_notification": true
+}

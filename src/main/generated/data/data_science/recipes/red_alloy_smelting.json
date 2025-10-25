@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 300,
+  "experience": 0.2,
+  "ingredient": {
+    "item": "data_science:red_alloy_dust"
+  },
+  "result": "data_science:red_alloy_ingot"
+}

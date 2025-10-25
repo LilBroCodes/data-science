@@ -1,0 +1,108 @@
+plugins {
+    id 'fabric-loom' version '1.10.2'
+    id 'maven-publish'
+}
+
+var build_num = providers.environmentVariable("GITHUB_RUN_NUMBER")
+        .filter { !it.isEmpty() }
+        .map { "-build.$it" }
+        .orElse(() -> "-local")
+        .getOrElse(() -> "")
+
+version = "$mod_version+mc$minecraft_version$build_num"
+group = maven_group
+
+base {
+    archivesName = archives_base_name
+}
+
+fabricApi {
+    configureDataGeneration {
+        client = true
+    }
+}
+
+loom {
+    accessWidenerPath = file("src/main/resources/data_science.accesswidener")
+}
+
+repositories {
+    maven {
+        name "SquidDev's maven [CC:T]"
+        url "https://squiddev.cc/maven/"
+    }
+    maven {
+        name = "Cloudsmith [Composer]"
+        url "https://dl.cloudsmith.io/public/lilbrocodes/composer-reloaded/maven/"
+    }
+    maven {
+        name "Ladysnake [Composer/CCA]"
+        url 'https://maven.ladysnake.org/releases'
+    }
+    maven {
+        name "Progwml6's maven [JEI]"
+        url "https://dvs1.progwml6.com/files/maven/"
+    }
+    maven {
+        name "Jared's maven [JEI]"
+        url "https://maven.blamejared.com/"
+    }
+    maven {
+        name "ModMaven [JEI]"
+        url "https://modmaven.dev"
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:$minecraft_version"
+    mappings "net.fabricmc:yarn:$yarn_mappings:v2"
+    modImplementation "net.fabricmc:fabric-loader:$loader_version"
+
+    modImplementation "net.fabricmc.fabric-api:fabric-api:$fabric_version"
+
+    modCompileOnly "cc.tweaked:cc-tweaked-$minecraft_version-fabric-api:$cct_version"
+    modImplementation "cc.tweaked:cc-tweaked-$minecraft_version-fabric:$cct_version"
+    modImplementation "org.lilbrocodes:composer-reloaded:$composer_version"
+
+    modRuntimeOnly "dev.onyxstudios.cardinal-components-api:cardinal-components-api:$cca_version"
+    modCompileOnly "mezz.jei:jei-$minecraft_version-fabric-api:$jei_version"
+}
+
+processResources {
+    inputs.property "version", version
+    inputs.property "minecraft_version", minecraft_version
+    inputs.property "loader_version", loader_version
+    inputs.property "cct_version", cct_version
+    inputs.property "composer_version", composer_version
+    filteringCharset "UTF-8"
+
+    filesMatching("fabric.mod.json") {
+        expand "version": version,
+                "minecraft_version": minecraft_version,
+                "loader_version": loader_version,
+                "cct_version": cct_version,
+                "composer_version": composer_version
+    }
+}
+
+def targetJavaVersion = 17
+tasks.withType(JavaCompile).configureEach {
+    it.options.encoding = "UTF-8"
+    if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible()) {
+        it.options.release.set(targetJavaVersion)
+    }
+}
+
+java {
+    def javaVersion = JavaVersion.toVersion(targetJavaVersion)
+    if (JavaVersion.current() < javaVersion) {
+        toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
+    }
+    withSourcesJar()
+}
+
+jar {
+    from("LICENSE") {
+        rename { "${it}_$archives_base_name" }
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "data_science:grinding",
+  "fail_chance": 0.05,
+  "input": {
+    "item": "minecraft:prismarine_crystals"
+  },
+  "outputs": [
+    {
+      "item": "data_science:rough_prismarine_crystal",
+      "nbt": "{Step:1}"
+    }
+  ]
+}

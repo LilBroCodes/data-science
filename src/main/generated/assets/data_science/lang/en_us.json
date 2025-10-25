@@ -1,0 +1,20 @@
+{
+  "block.data_science.environmental_sensor": "Environmental Sensor",
+  "block.data_science.grapher": "Grapher",
+  "item.data_science.advanced_circuit": "Advanced Circuit",
+  "item.data_science.assembled_advanced_circuit": "Raw Advanced Circuit",
+  "item.data_science.basic_circuit": "Basic Circuit",
+  "item.data_science.copper_dust": "Copper Dust",
+  "item.data_science.iron_dust": "Iron Dust",
+  "item.data_science.polished_prismarine_crystal": "Polished Prismarine Crystal",
+  "item.data_science.prismarine_pearl": "Prismarine Pearl",
+  "item.data_science.raw_basic_circuit": "Raw Basic Circuit",
+  "item.data_science.red_alloy_dust": "Red Alloy Dust",
+  "item.data_science.red_alloy_ingot": "Red Alloy Ingot",
+  "item.data_science.rough_prismarine_crystal": "Roughly Polished Prismarine Crystal",
+  "item.data_science.shattered_prismarine_crystal": "Shattered Prismarine Crystal",
+  "itemGroup.data_science": "Data Science",
+  "jei.data_science.category.grinding": "Item Grinding",
+  "text.data_science.crumble_rate": "%s%% chance of crumbling",
+  "tooltip.data_science.polishing_progress": "Polishing Progress"
+}

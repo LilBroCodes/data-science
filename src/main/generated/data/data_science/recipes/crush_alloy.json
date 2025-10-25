@@ -1,0 +1,12 @@
+{
+  "type": "data_science:grinding",
+  "fail_chance": 0.05,
+  "input": {
+    "item": "data_science:red_alloy_ingot"
+  },
+  "outputs": [
+    {
+      "item": "data_science:red_alloy_dust"
+    }
+  ]
+}

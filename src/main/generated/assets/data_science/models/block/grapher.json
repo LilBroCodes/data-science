@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "data_science:block/grapher_top",
+    "side": "data_science:block/grapher_side"
+  }
+}
