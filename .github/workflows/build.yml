@@ -1,6 +1,6 @@
 # Totally not stolen from mixed signals (unreleased mod of mine :P)
 
-name: Build
+name: Build & Qodana
 on:
   push:
   pull_request:
@@ -28,9 +28,9 @@ jobs:
       - name: Gradle Setup
         uses: gradle/actions/setup-gradle@v4
 
-#       Temp. disabled because of a possible server outage
-#      - name: Validate Wrapper Integrity
-#        uses: gradle/actions/wrapper-validation@v3
+      #     Temp. disabled because of a possible server outage
+      #     - name: Validate Wrapper Integrity
+      #       uses: gradle/actions/wrapper-validation@v3
 
       - name: Q&D Fix
         run: chmod +x gradlew
@@ -43,3 +43,37 @@ jobs:
         with:
           name: Artifacts
           path: build/libs
+
+  qodana:
+    runs-on: ubuntu-latest
+    needs: build  # run Qodana after the build succeeds
+    permissions:
+      contents: write
+      pull-requests: write
+      checks: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Java Setup
+        uses: actions/setup-java@v4
+        with:
+          distribution: "corretto"
+          java-version: 17
+
+      - name: Gradle Setup
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: 'Qodana Scan'
+        uses: JetBrains/qodana-action@v2025.2
+        env:
+          QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
+        with:
+          pr-mode: false
+          use-caches: true
+          post-pr-comment: true
+          use-annotations: true
+          upload-result: false
+          push-fixes: 'none'
