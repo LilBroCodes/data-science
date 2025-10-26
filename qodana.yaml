@@ -5,7 +5,4 @@ profile:
 
 projectJDK: "21"
 
-plugins:
-  - id: com.demonwav.minecraft-dev
-
 linter: jetbrains/qodana-jvm-community:2025.2
