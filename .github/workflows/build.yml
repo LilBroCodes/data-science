@@ -1,0 +1,45 @@
+# Totally not stolen from mixed signals (unreleased mod of mine :P)
+
+name: Build
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      release:
+        description: Is this a release build?
+        type: boolean
+        required: true
+        default: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Java Setup
+        uses: actions/setup-java@v4
+        with:
+          distribution: "corretto"
+          java-version: 17
+
+      - name: Gradle Setup
+        uses: gradle/actions/setup-gradle@v4
+
+#       Temp. disabled because of a possible server outage
+#      - name: Validate Wrapper Integrity
+#        uses: gradle/actions/wrapper-validation@v3
+
+      - name: Q&D Fix
+        run: chmod +x gradlew
+
+      - name: Build
+        run: ./gradlew build
+
+      - name: Get Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Artifacts
+          path: build/libs
