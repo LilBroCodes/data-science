@@ -1,0 +1,29 @@
+{
+  "parent": "data_science:grinding",
+  "criteria": {
+    "code": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.data_science.crumble.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "data_science:copper_dust"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.data_science.crumble.title"
+    }
+  },
+  "requirements": [
+    [
+      "code"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,4 +1,4 @@
-package org.lilbrocodes.data_science.common.cc;
+package org.lilbrocodes.data_science.common.cct;
 
 import dan200.computercraft.api.lua.LuaFunction;
 import dan200.computercraft.api.lua.GenericSource;

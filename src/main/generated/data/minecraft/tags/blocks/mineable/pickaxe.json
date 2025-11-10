@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "data_science:environmental_sensor",
-    "data_science:grapher"
+    "data_science:grapher",
+    "data_science:dataforge"
   ]
 }

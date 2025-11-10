@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import org.lilbrocodes.data_science.data.assets.DataScienceLanguageProvider;
 import org.lilbrocodes.data_science.data.assets.DataScienceModelProvider;
+import org.lilbrocodes.data_science.data.data.DataScienceAdvancementProvider;
 import org.lilbrocodes.data_science.data.data.DataScienceBlockLootProvider;
 import org.lilbrocodes.data_science.data.data.DataScienceBlockTagProvider;
 import org.lilbrocodes.data_science.data.data.DataScienceRecipeProvider;
@@ -19,5 +20,6 @@ public class DataScienceDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(DataScienceBlockLootProvider::new);
         pack.addProvider(DataScienceRecipeProvider::new);
         pack.addProvider(DataScienceBlockTagProvider::new);
+        pack.addProvider(DataScienceAdvancementProvider::create);
     }
 }

@@ -11,7 +11,8 @@ public class DataScienceBlockLootProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-        addDrop(ModBlocks.ENVIRONMENTAL_SENSOR.block);
-        addDrop(ModBlocks.GRAPHER.block);
+        addDrop(ModBlocks.ENVIRONMENTAL_SENSOR);
+        addDrop(ModBlocks.GRAPHER);
+        addDrop(ModBlocks.DATAFORGE);
     }
 }

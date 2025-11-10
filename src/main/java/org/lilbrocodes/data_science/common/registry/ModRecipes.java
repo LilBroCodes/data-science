@@ -8,7 +8,7 @@ import net.minecraft.registry.Registry;
 import org.lilbrocodes.data_science.common.DataScience;
 import org.lilbrocodes.data_science.common.recipes.GrindingRecipe;
 
-public class ModRecipes {
+public class ModRecipes{
     public static final RecipeType<GrindingRecipe> GRINDING_RECIPE_TYPE = Registry.register(
             Registries.RECIPE_TYPE,
             DataScience.identify("grinding"),

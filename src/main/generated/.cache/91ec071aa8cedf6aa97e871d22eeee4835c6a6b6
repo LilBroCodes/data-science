@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-25T23:42:56.854963966	Data Science/Recipes
+// 1.20.1	2025-11-10T19:32:23.981063245	Data Science/Recipes
 53e9954d5f6e74c229bcd05d79116f726105772c data/data_science/advancements/recipes/misc/grind_copper.json
 c080e0f16a6106b181e63dee953ee63c72bb022c data/data_science/recipes/prismarine_pearl.json
 6f694e898a4966b53073bfc510d519c2384ea17b data/data_science/advancements/recipes/misc/solder_smelting_advanced.json
@@ -19,9 +19,11 @@ e8c4b4fbbd979ebbabd9f3f9a9ad8001ed523b6b data/data_science/recipes/red_alloy_dus
 5b0efe0391f54ce362794e64c607400fef462cdc data/data_science/recipes/advanced_circuit.json
 0fd3564badab219bbeb1caa164c302b058a8683c data/data_science/recipes/crush_alloy.json
 554466788aca4703de24a58a9b03bf7a892cca02 data/data_science/recipes/basic_circuit.json
+3ac0dce52bb857691494089de62da73b54835f00 data/data_science/advancements/recipes/misc/grapher.json
 c659e476228533497409cd8ef2edce2e540599f3 data/data_science/recipes/combine_crystals.json
 04be8afa2e0cdf4cc04858fb1fbd64168e61a014 data/data_science/recipes/solder_smelting_advanced.json
 fd96896f9703eee6d9228cdab98b8262b1be69f2 data/data_science/recipes/solder_smelting_basic.json
 42b2a0b88f31547888773be90f0e8b69e735e5ca data/data_science/advancements/recipes/misc/solder_smelting_basic.json
 2c6573ab9c88f9492275a29c5a87a4424d63c8d0 data/data_science/advancements/recipes/misc/red_alloy_dust.json
+b8a05382e018c57894472f943c75ebac16f7b842 data/data_science/recipes/grapher.json
 5d35b63df843388e6363cdf886664a1c49e05641 data/data_science/advancements/recipes/misc/basic_circuit.json

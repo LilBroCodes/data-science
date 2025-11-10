@@ -8,6 +8,7 @@ import net.minecraft.data.DataWriter;
 import net.minecraft.data.client.*;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
+import org.lilbrocodes.data_science.common.DataScience;
 import org.lilbrocodes.data_science.common.registry.ModBlocks;
 import org.lilbrocodes.data_science.common.registry.ModItems;
 
@@ -32,8 +33,10 @@ public class DataScienceModelProvider implements DataProvider {
     }
 
     public static void generateBlocks(BlockStateModelGenerator generator) {
-        generator.registerSingleton(ModBlocks.ENVIRONMENTAL_SENSOR.block, TexturedModel.CUBE_COLUMN);
-        generator.registerSingleton(ModBlocks.GRAPHER.block, TexturedModel.CUBE_COLUMN);
+        generator.registerSingleton(ModBlocks.ENVIRONMENTAL_SENSOR, TexturedModel.CUBE_COLUMN);
+        generator.registerSingleton(ModBlocks.GRAPHER, TexturedModel.CUBE_COLUMN);
+
+        generator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(ModBlocks.DATAFORGE, DataScience.identify("block/dataforge")));
     }
 
     public static void generateItems(ItemModelGenerator generator) {

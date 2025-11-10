@@ -28,15 +28,15 @@ public class DataScienceRecipeProvider extends FabricRecipeProvider {
         // ================= CRAFTING =================
 
         // --------- Shaped ---------
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.ENVIRONMENTAL_SENSOR.item)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.ENVIRONMENTAL_SENSOR)
                 .pattern("NPN")
                 .pattern("RCR")
                 .pattern("IGI")
                 .input('N', Items.NETHERITE_INGOT)
-                .input('P', ModItems.PRISMARINE_PEARL)
-                .input('R', ModItems.RED_ALLOY_INGOT)
                 .input('I', Items.IRON_BLOCK)
                 .input('G', Items.IRON_INGOT)
+                .input('P', ModItems.PRISMARINE_PEARL)
+                .input('R', ModItems.RED_ALLOY_INGOT)
                 .input('C', ModItems.ADVANCED_CIRCUIT)
                 .criterion("has_circuit", conditionsFromItem(ModItems.ADVANCED_CIRCUIT))
                 .criterion("has_pearl", conditionsFromItem(ModItems.PRISMARINE_PEARL))
@@ -48,8 +48,8 @@ public class DataScienceRecipeProvider extends FabricRecipeProvider {
                 .pattern("C C")
                 .pattern("GCG")
                 .input('G', Items.GLASS_PANE)
-                .input('R', ModItems.RED_ALLOY_INGOT)
                 .input('C', Items.COPPER_INGOT)
+                .input('R', ModItems.RED_ALLOY_INGOT)
                 .criterion("has_red_alloy", conditionsFromItem(ModItems.RED_ALLOY_INGOT))
                 .criterion("has_copper", conditionsFromItem(Items.COPPER_INGOT))
                 .offerTo(consumer, "basic_circuit");
@@ -58,8 +58,8 @@ public class DataScienceRecipeProvider extends FabricRecipeProvider {
                 .pattern("PIP")
                 .pattern("BRB")
                 .pattern("PIP")
-                .input('P', ModItems.POLISHED_PRISMARINE_CRYSTAL)
                 .input('I', Items.GOLD_INGOT)
+                .input('P', ModItems.POLISHED_PRISMARINE_CRYSTAL)
                 .input('R', ModItems.RED_ALLOY_INGOT)
                 .input('B', ModItems.BASIC_CIRCUIT)
                 .criterion("has_red_alloy", conditionsFromItem(ModItems.RED_ALLOY_INGOT))
@@ -71,11 +71,24 @@ public class DataScienceRecipeProvider extends FabricRecipeProvider {
                 .pattern(" S ")
                 .pattern("SPS")
                 .pattern(" S ")
-                .input('S', ModItems.POLISHED_PRISMARINE_CRYSTAL)
                 .input('P', Items.ENDER_PEARL)
+                .input('S', ModItems.POLISHED_PRISMARINE_CRYSTAL)
                 .criterion("has_pearl", conditionsFromItem(Items.ENDER_PEARL))
                 .criterion("has_shard", conditionsFromItem(ModItems.POLISHED_PRISMARINE_CRYSTAL))
                 .offerTo(consumer, "prismarine_pearl");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.GRAPHER)
+                .pattern("GLG")
+                .pattern("RCR")
+                .pattern("IRI")
+                .input('L', Items.LECTERN)
+                .input('I', Items.IRON_BLOCK)
+                .input('G', Items.GRAY_STAINED_GLASS_PANE)
+                .input('C', ModItems.ADVANCED_CIRCUIT)
+                .input('R', ModItems.RED_ALLOY_INGOT)
+                .criterion("has_alloy", conditionsFromItem(ModItems.RED_ALLOY_INGOT))
+                .criterion("has_circuit", conditionsFromItem(ModItems.ADVANCED_CIRCUIT))
+                .offerTo(consumer, DataScience.identify("grapher"));
 
         // --------- Shapeless ---------
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.RED_ALLOY_DUST, 3)

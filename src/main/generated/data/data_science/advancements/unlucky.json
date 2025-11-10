@@ -1,0 +1,29 @@
+{
+  "parent": "data_science:shatter",
+  "criteria": {
+    "code": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.data_science.unlucky.description"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "item": "data_science:rough_prismarine_crystal"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.data_science.unlucky.title"
+    }
+  },
+  "requirements": [
+    [
+      "code"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -16,7 +16,8 @@ public class DataScienceBlockTagProvider extends FabricTagProvider.BlockTagProvi
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
-                .add(ModBlocks.ENVIRONMENTAL_SENSOR.block)
-                .add(ModBlocks.GRAPHER.block);
+                .add(ModBlocks.ENVIRONMENTAL_SENSOR)
+                .add(ModBlocks.GRAPHER)
+                .add(ModBlocks.DATAFORGE);
     }
 }

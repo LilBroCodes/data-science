@@ -1,0 +1,29 @@
+{
+  "parent": "data_science:root",
+  "criteria": {
+    "code": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.data_science.grinding.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:grindstone"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.data_science.grinding.title"
+    }
+  },
+  "requirements": [
+    [
+      "code"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,38 @@
+{
+  "parent": "data_science:advanced_circuit",
+  "criteria": {
+    "crafted_sensor": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "data_science:environmental_sensor"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.data_science.environmental_sensor.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "data_science:environmental_sensor"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.data_science.environmental_sensor.title"
+    }
+  },
+  "requirements": [
+    [
+      "crafted_sensor"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

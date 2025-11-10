@@ -1,0 +1,38 @@
+{
+  "parent": "data_science:advanced_circuit",
+  "criteria": {
+    "crafted_grapher": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "data_science:grapher"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.data_science.grapher.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "data_science:grapher"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.data_science.grapher.title"
+    }
+  },
+  "requirements": [
+    [
+      "crafted_grapher"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

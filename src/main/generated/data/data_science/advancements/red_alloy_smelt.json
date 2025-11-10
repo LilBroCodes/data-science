@@ -1,0 +1,38 @@
+{
+  "parent": "data_science:red_alloy_craft",
+  "criteria": {
+    "smelted_alloy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "data_science:red_alloy_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.data_science.red_alloy_smelt.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "data_science:red_alloy_ingot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.data_science.red_alloy_smelt.title"
+    }
+  },
+  "requirements": [
+    [
+      "smelted_alloy"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

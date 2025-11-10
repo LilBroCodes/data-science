@@ -1,0 +1,38 @@
+{
+  "parent": "data_science:shatter",
+  "criteria": {
+    "polished": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "data_science:polished_prismarine_crystal"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.data_science.polished_crystal.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "data_science:polished_prismarine_crystal"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.data_science.polished_crystal.title"
+    }
+  },
+  "requirements": [
+    [
+      "polished"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

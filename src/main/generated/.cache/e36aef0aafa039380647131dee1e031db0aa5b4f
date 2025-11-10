@@ -1,3 +1,4 @@
-// 1.20.1	2025-10-25T23:42:56.854763929	Data Science/Block Loot Tables
+// 1.20.1	2025-11-10T19:32:23.98086976	Data Science/Block Loot Tables
 23c2bf6806838d8c53c064508cbdafbbf46fa16c data/data_science/loot_tables/blocks/environmental_sensor.json
+2b2a4bde1a1c86393b28fa3ff9b81ef1ddeed22d data/data_science/loot_tables/blocks/dataforge.json
 bc2b7b76dd4b21c0f8f73ba3bae11bd3fa386d86 data/data_science/loot_tables/blocks/grapher.json

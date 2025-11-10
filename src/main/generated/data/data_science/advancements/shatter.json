@@ -1,0 +1,29 @@
+{
+  "parent": "data_science:grinding",
+  "criteria": {
+    "code": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.data_science.shatter.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "data_science:shattered_prismarine_crystal"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.data_science.shatter.title"
+    }
+  },
+  "requirements": [
+    [
+      "code"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

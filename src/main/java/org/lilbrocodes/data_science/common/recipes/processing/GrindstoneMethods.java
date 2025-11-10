@@ -6,6 +6,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.BlockStateParticleEffect;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Arm;
@@ -15,16 +16,20 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import org.lilbrocodes.composer_reloaded.api.util.AdvancementManager;
+import org.lilbrocodes.data_science.cca.DataScienceCardinalComponents;
+import org.lilbrocodes.data_science.cca.basic.IntComponent;
 import org.lilbrocodes.data_science.common.item.AbstractPolishableItem;
 import org.lilbrocodes.data_science.common.recipes.GrindingRecipe;
+import org.lilbrocodes.data_science.common.registry.ModAdvancements;
 import org.lilbrocodes.data_science.common.registry.ModRecipes;
 
 import java.util.List;
 
 public class GrindstoneMethods {
-    public static boolean tryUseItem(World world, BlockHitResult hitResult, BlockState state, BlockPos pos, PlayerEntity player, Hand hand) {
-        if (world.isClient) {
-            addDustParticles(world, hitResult, state, player.getRotationVecClient(), hand == Hand.MAIN_HAND ? player.getMainArm() : player.getMainArm().getOpposite());
+    public static boolean tryUseItem(World world, BlockHitResult hitResult, BlockState state, BlockPos pos, PlayerEntity user, Hand hand) {
+        if (world.isClient || !(user instanceof ServerPlayerEntity player)) {
+            addDustParticles(world, hitResult, state, user.getRotationVecClient(), hand == Hand.MAIN_HAND ? user.getMainArm() : user.getMainArm().getOpposite());
             return false;
         };
 
@@ -34,15 +39,20 @@ public class GrindstoneMethods {
         if (stack.getItem() instanceof AbstractPolishableItem polishable) {
             ItemStack result = polishable.tryPolish(stack, world, player);
 
+            IntComponent shattered = DataScienceCardinalComponents.SHATTERED.get(player);
             if (result == null || result.isOf(polishable.getShatteredItem(stack).getItem())) {
+                AdvancementManager.grantAdvancement(player, ModAdvancements.SHATTERED);
+                int shatterCount = shattered.getValue() + 1;
+                shattered.setValue(shatterCount);
+                if (shatterCount >= 5) AdvancementManager.grantAdvancement(player, ModAdvancements.UNLUCKY);
+
                 player.setStackInHand(hand, result);
                 world.playSound(null, pos, SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.BLOCKS, 1f, 1f);
             } else if (!result.isEmpty()) {
-                // completed → replace with finished item
+                shattered.setValue(0);
                 player.setStackInHand(hand, result);
                 world.playSound(null, pos, SoundEvents.BLOCK_GRINDSTONE_USE, SoundCategory.BLOCKS, 1f, 1f);
             } else {
-                // successful partial progress → keep same stack (already mutated)
                 player.setStackInHand(hand, stack);
                 world.playSound(null, pos, SoundEvents.BLOCK_GRINDSTONE_USE, SoundCategory.BLOCKS, 1f, 1f);
             }
@@ -61,8 +71,10 @@ public class GrindstoneMethods {
                             world.spawnEntity(new ItemEntity(world, p.x, p.y, p.z, insert));
                         }
                     });
+                    AdvancementManager.grantAdvancement(player, ModAdvancements.GRINDING_AWAY);
                     world.playSound(null, pos, SoundEvents.BLOCK_GRINDSTONE_USE, SoundCategory.BLOCKS, 1f, 1f);
                 } else {
+                    AdvancementManager.grantAdvancement(player, ModAdvancements.DIMINISHING_RETURNS);
                     world.playSound(null, pos, SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.BLOCKS, 1f, 1f);
                 }
                 stack.decrement(1);

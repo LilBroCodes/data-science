@@ -1,0 +1,38 @@
+{
+  "criteria": {
+    "got_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:iron_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "data_science:textures/gui/advancements_background.png",
+    "description": {
+      "translate": "advancements.data_science.root.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "computercraft:computer_advanced"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.data_science.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "got_iron"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

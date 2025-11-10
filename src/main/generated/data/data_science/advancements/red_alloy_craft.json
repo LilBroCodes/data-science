@@ -1,0 +1,38 @@
+{
+  "parent": "data_science:root",
+  "criteria": {
+    "crafted_alloy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "data_science:red_alloy_dust"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.data_science.red_alloy_craft.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "data_science:red_alloy_dust"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.data_science.red_alloy_craft.title"
+    }
+  },
+  "requirements": [
+    [
+      "crafted_alloy"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

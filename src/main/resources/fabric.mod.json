@@ -21,11 +21,19 @@
     ],
     "jei_mod_plugin": [
       "org.lilbrocodes.data_science.integration.jei.DataScienceJEIPlugin"
+    ],
+    "cardinal-components": [
+      "org.lilbrocodes.data_science.cca.DataScienceCardinalComponents"
     ]
   },
   "mixins": [
     "data_science.mixins.json"
   ],
+  "custom": {
+    "cardinal-components": [
+      "data_science:shattered"
+    ]
+  },
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",

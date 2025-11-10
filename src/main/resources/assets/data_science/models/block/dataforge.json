@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "data_science:block/dataforge/north",
+    "up": "data_science:block/dataforge/up",
+    "down": "data_science:block/dataforge/down",
+    "north": "data_science:block/dataforge/north",
+    "south": "data_science:block/dataforge/south",
+    "east": "data_science:block/dataforge/east",
+    "west": "data_science:block/dataforge/west"
+  }
+}
